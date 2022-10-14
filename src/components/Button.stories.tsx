@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Text, TextProps } from './Text';
+import { Button, ButtonProps } from './Button';
 
 export default {
-  title: 'Components/Text',
-  component: Text,
+  title: 'Components/Button',
+  component: Button,
   args: {
-    children: 'Lorem ipsum is placeholder text commonly used in the graphic.',
+    children: 'Button component',
     size: 'md',
   },
   argTypes: {
@@ -16,9 +16,9 @@ export default {
       },
     },
   },
-} as Meta<TextProps>;
+} as Meta<ButtonProps>;
 
-export const Default: StoryObj<TextProps> = {
+export const Default: StoryObj<ButtonProps> = {
   argTypes: {
     asChild: {
       table: {
@@ -28,7 +28,7 @@ export const Default: StoryObj<TextProps> = {
   },
 };
 
-export const Small: StoryObj<TextProps> = {
+export const Small: StoryObj<ButtonProps> = {
   args: {
     size: 'sm',
   },
@@ -41,7 +41,7 @@ export const Small: StoryObj<TextProps> = {
   },
 };
 
-export const Large: StoryObj<TextProps> = {
+export const Large: StoryObj<ButtonProps> = {
   args: {
     size: 'lg',
   },
@@ -54,10 +54,14 @@ export const Large: StoryObj<TextProps> = {
   },
 };
 
-export const CustomComponent: StoryObj<TextProps> = {
+export const CustomComponent: StoryObj<ButtonProps> = {
   args: {
     asChild: true,
-    children: <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>,
+    children: (
+      <a href="https://google.com" target="_blank">
+        Link example
+      </a>
+    ),
   },
   argTypes: {
     children: {

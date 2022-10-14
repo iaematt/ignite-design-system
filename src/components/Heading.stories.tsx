@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Text, TextProps } from './Text';
+import { Heading, HeadingProps } from './Heading';
 
 export default {
-  title: 'Components/Text',
-  component: Text,
+  title: 'Components/Heading',
+  component: Heading,
   args: {
     children: 'Lorem ipsum is placeholder text commonly used in the graphic.',
     size: 'md',
@@ -16,9 +16,9 @@ export default {
       },
     },
   },
-} as Meta<TextProps>;
+} as Meta<HeadingProps>;
 
-export const Default: StoryObj<TextProps> = {
+export const Default: StoryObj<HeadingProps> = {
   argTypes: {
     asChild: {
       table: {
@@ -28,7 +28,7 @@ export const Default: StoryObj<TextProps> = {
   },
 };
 
-export const Small: StoryObj<TextProps> = {
+export const Small: StoryObj<HeadingProps> = {
   args: {
     size: 'sm',
   },
@@ -41,7 +41,7 @@ export const Small: StoryObj<TextProps> = {
   },
 };
 
-export const Large: StoryObj<TextProps> = {
+export const Large: StoryObj<HeadingProps> = {
   args: {
     size: 'lg',
   },
@@ -54,10 +54,10 @@ export const Large: StoryObj<TextProps> = {
   },
 };
 
-export const CustomComponent: StoryObj<TextProps> = {
+export const CustomComponent: StoryObj<HeadingProps> = {
   args: {
     asChild: true,
-    children: <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>,
+    children: <h1>Lorem ipsum is placeholder text commonly used in the graphic.</h1>,
   },
   argTypes: {
     children: {
