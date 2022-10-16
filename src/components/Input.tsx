@@ -1,24 +1,42 @@
-import { clsx } from 'clsx';
 import { InputHTMLAttributes, ReactNode } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
-
-interface InputRootProps {
+export interface InputRootProps {
   children: ReactNode;
 }
 
 function InputRoot({ children }: InputRootProps) {
   return (
-    <div className="py-4 px-3 rounded bg-gray-800 text-gray-100 outline-none text-xs placeholder:text-gray-400 w-full focus:ring-2 ring-cyan-300">
+    <div className="flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 w-full focus-within:ring-2 ring-cyan-300">
       {children}
     </div>
   );
 }
 
-export function Input(props: InputProps) {
+InputRoot.displayName = 'TextInput.Root';
+
+interface InputIconProps {
+  children: ReactNode;
+}
+
+function InputIcon({ children }: InputIconProps) {
+  return <Slot className="w-6 h-6 text-gray-400">{children}</Slot>;
+}
+
+InputIcon.displayName = 'TextInput.Icon';
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+function Input(props: InputProps) {
   return (
-    <div className="py-4 px-3 rounded bg-gray-800 text-gray-100 outline-none text-xs placeholder:text-gray-400 w-full focus:ring-2 ring-cyan-300">
-      <input className={clsx('')} {...props} />
-    </div>
+    <input className="bg-transparent flex-1 text-gray-100 outline-none text-xs placeholder:text-gray-400" {...props} />
   );
 }
+
+Input.displayName = 'TextInput.Input';
+
+export const TextInput = {
+  Root: InputRoot,
+  Input: Input,
+  Icon: InputIcon,
+};
