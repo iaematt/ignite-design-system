@@ -8,6 +8,7 @@ export default {
   args: {
     children: 'Lorem ipsum is placeholder text commonly used in the graphic.',
     size: 'md',
+    className: 'text-gray-100',
   },
   argTypes: {
     size: {

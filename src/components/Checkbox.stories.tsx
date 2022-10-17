@@ -4,17 +4,17 @@ import { Checkbox, CheckboxProps } from './Checkbox';
 import { Text } from './Text';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Forms/Checkbox',
   component: Checkbox,
   args: {},
   argTypes: {},
   decorators: [
     (Story) => {
       return (
-        <div className="flex items-center gap-2">
+        <label className="flex items-center gap-2">
           {Story()}
-          <Text>Remember me for 30 days</Text>
-        </div>
+          <Text className="text-gray-100">Remember me for 30 days</Text>
+        </label>
       );
     },
   ],
