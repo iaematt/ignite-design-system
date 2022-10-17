@@ -8,8 +8,12 @@ import { TextInput } from './components/Input';
 import { Text } from './components/Text';
 
 export function App() {
+  const formSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className="flex w-full h-full items-center justify-center flex-col bg-gray-900">
+    <div className="flex w-full h-full items-center justify-center flex-col">
       <img src="/react-logo.svg" className="w-24" />
       <Heading asChild>
         <h1>Ignite Lab</h1>
@@ -18,7 +22,7 @@ export function App() {
         <p className="text-gray-400">Login and start using!</p>
       </Text>
 
-      <form className="flex flex-col justify-start w-[400px] mt-9 mb-9">
+      <form className="flex flex-col justify-start w-[400px] mt-9 mb-9" onSubmit={formSubmit}>
         <label className="mb-4">
           <Text asChild>
             <p className="pb-2 font-bold">Email address</p>
@@ -54,14 +58,14 @@ export function App() {
       </form>
 
       <Text asChild>
-        <a href="#" className="">
+        <a href="#" className="text-gray-400 hover:text-cyan-300 underline transition-colors">
           Forgot your password
         </a>
       </Text>
 
       <Text asChild>
-        <a href="#" className="mt-2">
-          Don't have an account? Create one now.
+        <a href="#" className="mt-2 text-gray-400 hover:text-cyan-300 underline transition-colors">
+          Don't have an account? Register now
         </a>
       </Text>
     </div>

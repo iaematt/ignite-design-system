@@ -6,6 +6,6 @@
   html,
   body,
   #root {
-    @apply h-full;
+    @apply h-screen max-h-fit bg-gray-900;
   }
 }
